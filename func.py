@@ -319,11 +319,83 @@ def add(calcc):
         return calcc
 
 
-""""def sqr(calcc):"""
+def sqr(calcc):
+    try:
+        calc = "".join(calcc)
+        m = calc.split("^", 1)
+        if len(m) == 2:
+            onee = str(m[0])
+            twoo = str(m[1])
+            if check(onee) == False:
+                if ones(onee, obj="÷") == "no":
+                    if ones(onee, obj="×") == "no":
+                        if ones(onee, obj="+") == "no":
+                            if ones(onee, "-") == "no":
+                                pass
+                            elif ones(onee, "-") != "no":
+                                one = ones(m[0], "-")
+                                m[0] = "".join(removeone(m[0], one))
+                        elif ones(onee, "+") != "no":
+                            one = ones(m[0], "+")
+                            m[0] = "".join(removeone(m[0], one))
+                    elif ones(onee, "×") != "no":
+                        one = ones(m[0], "×")
+                        m[0] = "".join(removeone(m[0], one))
+                elif ones(onee, "÷") != "no":
+                    one = ones(m[0], "÷")
+                    m[0] = "".join(removeone(m[0], one))
+            elif check(onee) == True:
+                one = m[0]
+                m[0] = "".join(removeone(m[0], one))
+            if check(twoo) == False:
+                if twos(twoo, obj="÷") == "no":
+                    if twos(twoo, "×") == "no":
+                        if twos(twoo, "+") == "no":
+                            if twos(m[1], "-") == "no":
+                                pass
+                            elif twos(m[1], "-") != "no":
+                                two = twos(m[1], "-")
+                                m[1] = "".join(removesec(m[1], two))
+                        elif twos(m[1], "+") != "no":
+                            two = twos(m[1], "+")
+                            m[1] = "".join(removesec(m[1], two))
+                    elif twos(m[1], "×") != "no":
+                        two = twos(m[1], "×")
+                        m[1] = "".join(removesec(m[1], two))
+                elif twos(m[1], "÷") != "no":
+                    two = twos(m[1], "÷")
+                    m[1] = "".join(removesec(m[1], two))
+            elif check(twoo) == True:
+                two = m[1]
+                m[1] = "".join(removesec(m[1], two))
+            num1 = float(one)
+            num2 = float(two)
+            ans = num1 ** num2
+            ans = int(ans)
+            ans = str(ans)
+            m.insert(1, ans)
+        calcc.clear()
+        calcc.append("".join(m))
+        return calcc
+    except:
+        return calcc
 
+
+def fix(l):
+    try:
+        e = l[0]
+        l.pop(0)
+        for n in range(len(e)):
+            l1 = len(e)
+            l2 = l1-n
+            l.insert(0,e[l2-1])
+        return l
+    except:
+        return l
 
 def d1(num=list):
     l = []
+    num=fix(num)
     num.reverse()
     for n in range(0, 7):
         try:

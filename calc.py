@@ -1,21 +1,23 @@
 import tkinter as tk
-from func import d2, d1, d3, d4, div, mult, add, sub, check
+from func import d2, d1, d3, d4, div, mult, add, sub, check, sqr
 
 giu_face = tk.Tk()
 giu_face.title("Calculator")
 
 
-calc1 = []
+calc0 = []
 
 def mat():
-    c=check(calc1)
-    for _ in range(10):
+    c=check(calc0)
+    for _ in range(len(calc0)):
         if c==False:
+            calc1 = sqr(calc0)
             calc2 = div(calc1)
             calc3 = mult(calc2)
             calc4 = add(calc3)
             calc5 = sub(calc4)
         elif c==True:
+            calc1 = sqr(calc0)
             calc2 = div(calc1)
             calc3 = mult(calc2)
             calc4 = add(calc3)
@@ -25,110 +27,111 @@ def mat():
 
 
 def display():
-    dis1 = tk.Label(giu_face, text=d1(calc1), font="lucida 20 bold")
+    print(calc0)
+    dis1 = tk.Label(giu_face, text=d1(calc0), font="lucida 20 bold")
     dis1.grid(row=3, column=3)
-    dis2 = tk.Label(giu_face, text=d2(calc1), font="lucida 20 bold")
+    dis2 = tk.Label(giu_face, text=d2(calc0), font="lucida 20 bold")
     dis2.grid(row=3, column=2)
-    dis2 = tk.Label(giu_face, text=d3(calc1), font="lucida 20 bold")
+    dis2 = tk.Label(giu_face, text=d3(calc0), font="lucida 20 bold")
     dis2.grid(row=3, column=1)
-    dis2 = tk.Label(giu_face, text=d4(calc1), font="lucida 20 bold")
+    dis2 = tk.Label(giu_face, text=d4(calc0), font="lucida 20 bold")
     dis2.grid(row=3, column=0)
 
 
 def equal():
-    calc1 = mat()
+    calc0 = mat()
     display()
 
 
 def one():
-    calc1.append("1")
+    calc0.append("1")
     display()
 
 
 def two():
-    calc1.append("2")
+    calc0.append("2")
     display()
 
 
 def three():
-    calc1.append("3")
+    calc0.append("3")
     display()
 
 
 def four():
-    calc1.append("4")
+    calc0.append("4")
     display()
 
 
 def five():
-    calc1.append("5")
+    calc0.append("5")
     display()
 
 
 def six():
-    calc1.append("6")
+    calc0.append("6")
     display()
 
 
 def seven():
-    calc1.append("7")
+    calc0.append("7")
     display()
 
 
 def eight():
-    calc1.append("8")
+    calc0.append("8")
     display()
 
 
 def nine():
-    calc1.append("9")
+    calc0.append("9")
     display()
 
 
 def zero():
-    calc1.append("0")
+    calc0.append("0")
     display()
 
 
 def minus():
-    calc1.append("-")
+    calc0.append("-")
     display()
 
 
 def plus():
-    calc1.append("+")
+    calc0.append("+")
     display()
 
 
 def clearall():
-    calc1.clear()
+    calc0.clear()
     display()
 
 
 def clear():
     try:
-        calc1.pop(len(calc1) - 1)
+        calc0.pop(len(calc0) - 1)
     except:
         pass
     display()
 
 
 def square():
-    calc1.append("²")
+    calc0.append("^")
     display()
 
 
 def multiply():
-    calc1.append("×")
+    calc0.append("×")
     display()
 
 
 def divide():
-    calc1.append("÷")
+    calc0.append("÷")
     display()
 
 def squrroot():
-    calc1.append("√")
+    calc0.append("√")
     display()
 
 
@@ -141,7 +144,7 @@ bton3 = tk.Button(giu_face, text=' 7  ', font="lucida 20 bold", command=seven)
 bton3.grid(row=5, column=0, ipady=4, ipadx=20)
 bton4 = tk.Button(giu_face, text=' C ', font="lucida 20 bold", command=clear)
 bton4.grid(row=4, column=0, ipady=4, ipadx=20)
-bton5 = tk.Button(giu_face, text=' x²  ', font="lucida 20 bold", command=square)
+bton5 = tk.Button(giu_face, text=' nˣ ', font="lucida 20 bold", command=square)
 bton5.grid(row=8, column=0, ipady=4, ipadx=20)
 bton6 = tk.Button(giu_face, text='  2 ', font="lucida 20 bold", command=two)
 bton6.grid(row=7, column=1, ipady=4, ipadx=20)
