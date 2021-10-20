@@ -380,6 +380,43 @@ def sqr(calcc):
     except:
         return calcc
 
+def sqrroot(calcc):
+    try:
+        calc = "".join(calcc)
+        m = calc.split("²√", 1)
+        if len(m) == 2:
+            twoo = str(m[1])
+            if check(twoo) == False:
+                if twos(twoo, obj="÷") == "no":
+                    if twos(twoo, "×") == "no":
+                        if twos(twoo, "+") == "no":
+                            if twos(m[1], "-") == "no":
+                                pass
+                            elif twos(m[1], "-") != "no":
+                                two = twos(m[1], "-")
+                                m[1] = "".join(removesec(m[1], two))
+                        elif twos(m[1], "+") != "no":
+                            two = twos(m[1], "+")
+                            m[1] = "".join(removesec(m[1], two))
+                    elif twos(m[1], "×") != "no":
+                        two = twos(m[1], "×")
+                        m[1] = "".join(removesec(m[1], two))
+                elif twos(m[1], "÷") != "no":
+                    two = twos(m[1], "÷")
+                    m[1] = "".join(removesec(m[1], two))
+            elif check(twoo) == True:
+                two = m[1]
+                m[1] = "".join(removesec(m[1], two))
+            num2 = float(two)
+            ans = sqrt(num2)
+            ans = int(ans)
+            ans = str(ans)
+            m.insert(1, ans)
+        calcc.clear()
+        calcc.append("".join(m))
+        return calcc
+    except:
+        return calcc
 
 def fix(l):
     try:
@@ -411,7 +448,6 @@ def d1(num=list):
     else:
         pass
     return "".join(l)
-
 
 def d2(num=list):
     l = []
