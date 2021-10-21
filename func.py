@@ -451,8 +451,10 @@ def d1(num=list):
 
 def d2(num=list):
     l = []
+    print(num)
     num.reverse()
     for n in range(7, 14):
+        print(num)
         try:
             l.append(num[n])
         except:
@@ -481,7 +483,7 @@ def d3(num=list):
     less = 7 - len(l)
     if less > 0:
         for _ in range(less):
-            l.insert(0, " ")
+            l.insert(0, "  ")
     else:
         pass
     return "".join(l)
@@ -500,7 +502,7 @@ def d4(num):
     less = 7 - len(l)
     if less > 0:
         for _ in range(less):
-            l.insert(0, " ")
+            l.insert(0, "  ")
     else:
         pass
     return "".join(l)

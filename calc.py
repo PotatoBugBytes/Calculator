@@ -140,7 +140,7 @@ def twozero():
         zero()
     display()
 
-
+""
 display()
 bton1 = tk.Button(giu_face, text=' 1  ', font="lucida 20 bold", command=one)
 bton1.grid(row=7, column=0, ipady=4, ipadx=20)
