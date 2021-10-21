@@ -451,10 +451,8 @@ def d1(num=list):
 
 def d2(num=list):
     l = []
-    print(num)
     num.reverse()
     for n in range(7, 14):
-        print(num)
         try:
             l.append(num[n])
         except:
