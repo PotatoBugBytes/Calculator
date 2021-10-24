@@ -14,6 +14,33 @@ def spliting(string):
         final.append(n)
     return final
 
+def floatingthree(num1):
+    fnum = []
+    num = spliting(num1)
+    try:
+        for n in range(3):
+            print(fnum)
+            print(num)
+            fnum.append(num[n])
+        return fnum
+    except:
+        for n in range(2):
+            print(fnum)
+            print(num)
+            fnum.append(num[n])
+        return fnum
+    finally:
+        fnum.append(num1)
+        return num1
+
+def floating(num):
+    num = str(num)
+    num = num.split(".")
+    num1 = num[0]
+    num2 = num[1]
+    num2 = floatingthree(num2)
+    ans = (f"{num1}.{num2}")
+    return ans
 
 def ones(ones, obj):
     if obj in ones:
@@ -132,6 +159,7 @@ def sub(calcc):
 
 
 def div(calcc):
+    print(calcc)
     try:
         calc = "".join(calcc)
         m = calc.split("÷", 1)
@@ -183,13 +211,31 @@ def div(calcc):
             num1 = float(one)
             num2 = float(two)
             ans = num1 / num2
-            ans = int(ans)
             ans = str(ans)
-            m.insert(1, ans)
-        calcc.clear()
-        calcc.append("".join(m))
-        return calcc
+            anss = spliting(ans)
+            if anss[len(anss)-1] =="0":
+                ans1 = "".join(anss)
+                ans1 = float(ans1)
+                ans1 = int(ans1)
+                ans1 = str(ans1)
+                m.insert(1, ans1)
+                calcc.clear()
+                calcc.append("".join(m))
+                print(calcc)
+                return calcc
+            elif anss[len(anss)-1]!="0":
+                ansdot = ans.split(".")
+                ans1 = "".join(anss)
+                print(ans1)
+                ans1 = floating(float(ans1))
+                ans1 = str(ans1)
+                m.insert(1, ans1)
+                calcc.clear()
+                calcc.append("".join(m))
+                print(calcc)
+                return calcc
     except:
+        print(calcc)
         return calcc
 
 
@@ -201,9 +247,7 @@ def mult(calcc):
         twoo = str(m[1])
         if check(onee) == False:
             if ones(onee, obj="÷") == "no":
-                print(232)
                 if ones(onee, obj="×") == "no":
-                    print(232)
                     if ones(onee, obj="+") == "no":
                         if ones(onee, "-") == "no":
                             pass
@@ -214,7 +258,6 @@ def mult(calcc):
                         one = ones(m[0], "+")
                         m[0] = "".join(removeone(m[0], one))
                 elif ones(onee, "×") != "no":
-                    print(232)
                     one = ones(m[0], "×")
                     m[0] = "".join(removeone(m[0], one))
             elif ones(onee, "÷") != "no":
@@ -247,12 +290,26 @@ def mult(calcc):
         num1 = float(one)
         num2 = float(two)
         ans = num1 * num2
-        ans = int(ans)
         ans = str(ans)
-        m.insert(1, ans)
-        calcc.clear()
-        calcc.append("".join(m))
-        return calcc
+        anss = spliting(ans)
+        if anss[len(anss) - 1] == "0":
+            ans1 = "".join(anss)
+            ans1 = float(ans1)
+            ans1 = int(ans1)
+            ans1 = str(ans1)
+            m.insert(1, ans1)
+            calcc.clear()
+            calcc.append("".join(m))
+            return calcc
+        elif anss[len(anss) - 1] != 0:
+            ansdot = ans.split(".")
+            ans1 = "".join(anss)
+            ans1 = floating(float(ans1))
+            ans1 = str(ans1)
+            m.insert(1, ans1)
+            calcc.clear()
+            calcc.append("".join(m))
+            return calcc
     except:
         return calcc
 
@@ -309,12 +366,26 @@ def add(calcc):
             num1 = float(one)
             num2 = float(two)
             ans = num1 + num2
-            ans = int(ans)
             ans = str(ans)
-            m.insert(1, ans)
-        calcc.clear()
-        calcc.append("".join(m))
-        return calcc
+            anss = spliting(ans)
+            if anss[len(anss) - 1] == "0":
+                ans1 = "".join(anss)
+                ans1 = float(ans1)
+                ans1 = int(ans1)
+                ans1 = str(ans1)
+                m.insert(1, ans1)
+                calcc.clear()
+                calcc.append("".join(m))
+                return calcc
+            elif anss[len(anss) - 1] != 0:
+                ansdot = ans.split(".")
+                ans1 = "".join(anss)
+                ans1 = floating(float(ans1))
+                ans1 = str(ans1)
+                m.insert(1, ans1)
+                calcc.clear()
+                calcc.append("".join(m))
+                return calcc
     except:
         return calcc
 
@@ -409,12 +480,26 @@ def sqrroot(calcc):
                 m[1] = "".join(removesec(m[1], two))
             num2 = float(two)
             ans = sqrt(num2)
-            ans = int(ans)
             ans = str(ans)
-            m.insert(1, ans)
-        calcc.clear()
-        calcc.append("".join(m))
-        return calcc
+            anss = spliting(ans)
+            if anss[len(anss) - 1] == "0":
+                ans1 = "".join(anss)
+                ans1 = float(ans1)
+                ans1 = int(ans1)
+                ans1 = str(ans1)
+                m.insert(1, ans1)
+                calcc.clear()
+                calcc.append("".join(m))
+                return calcc
+            elif anss[len(anss) - 1] != 0:
+                ansdot = ans.split(".")
+                ans1 = "".join(anss)
+                ans1 = floating(float(ans1))
+                ans1 = str(ans1)
+                m.insert(1, ans1)
+                calcc.clear()
+                calcc.append("".join(m))
+                return calcc
     except:
         return calcc
 

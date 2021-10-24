@@ -5,7 +5,7 @@ giu_face = tk.Tk()
 giu_face.title("Calculator")
 
 
-calc132 = []
+calc132 = ["2.5"]
 
 def mat():
     c=check(calc132)
@@ -14,14 +14,14 @@ def mat():
             calc0 = sqrroot(calc132)
             calc1 = sqr(calc0)
             calc2 = div(calc1)
-            calc3 = mult(calc2)
+            calc3 = mult(calc1)
             calc4 = add(calc3)
             calc5 = sub(calc4)
         elif c==True:
             calc0 = sqrroot(calc132)
             calc1 = sqr(calc0)
             calc2 = div(calc1)
-            calc3 = mult(calc2)
+            calc3 = mult(calc1)
             calc4 = add(calc3)
             calc5 = sub(calc4)
             return calc5
