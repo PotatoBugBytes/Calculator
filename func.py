@@ -474,12 +474,26 @@ def sqr(calcc):
                 num1 = float(one)
                 num2 = float(two)
                 ans = num1 ** num2
-                ans = int(ans)
                 ans = str(ans)
-                m.insert(1, ans)
-            calcc.clear()
-            calcc.append("".join(m))
-            return calcc
+                anss = spliting(ans)
+                if anss[len(anss) - 1] == "0":
+                    ans1 = "".join(anss)
+                    ans1 = float(ans1)
+                    ans1 = int(ans1)
+                    ans1 = str(ans1)
+                    m.insert(1, ans1)
+                    calcc.clear()
+                    calcc.append("".join(m))
+                    return calcc
+                elif anss[len(anss) - 1] != 0:
+                    ansdot = ans.split(".")
+                    ans1 = "".join(anss)
+                    ans1 = floating(float(ans1))
+                    ans1 = str(ans1)
+                    m.insert(1, ans1)
+                    calcc.clear()
+                    calcc.append("".join(m))
+                    return calcc
         else:
             return calcc
     except:
