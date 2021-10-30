@@ -1,3 +1,3 @@
 # Calculator
 
-If it have some error or bug plz inform me 
+If it has some errors or bugs plz inform me 
