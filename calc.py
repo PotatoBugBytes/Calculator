@@ -5,28 +5,43 @@ giu_face = tk.Tk()
 giu_face.title("Calculator")
 
 
-calc132 = ["2.5"]
+calc132 = []
 
 def mat():
     c=check(calc132)
+    print(calc132)
     for _ in range(len(calc132)):
         if c==False:
             calc0 = sqrroot(calc132)
+            print(calc0)
             calc1 = sqr(calc0)
+            print(calc1)
             calc2 = div(calc1)
-            calc3 = mult(calc1)
+            print(calc2)
+            calc3 = mult(calc2)
+            print(calc3)
             calc4 = add(calc3)
+            print(calc4)
             calc5 = sub(calc4)
         elif c==True:
             calc0 = sqrroot(calc132)
             calc1 = sqr(calc0)
             calc2 = div(calc1)
-            calc3 = mult(calc1)
+            calc3 = mult(calc2)
             calc4 = add(calc3)
             calc5 = sub(calc4)
             return calc5
 
 
+def display1():
+    dis1 = tk.Label(giu_face, text="              ")
+    dis1.grid(row=3, column=3)
+    dis2 = tk.Label(giu_face, text="              ")
+    dis2.grid(row=3, column=2)
+    dis2 = tk.Label(giu_face, text="              ")
+    dis2.grid(row=3, column=1)
+    dis2 = tk.Label(giu_face, text="              ")
+    dis2.grid(row=3, column=0)
 
 def display():
     dis1 = tk.Label(giu_face, text=d1(calc132), font="lucida 20 bold")
@@ -38,6 +53,9 @@ def display():
     dis2 = tk.Label(giu_face, text=d4(calc132), font="lucida 20 bold")
     dis2.grid(row=3, column=0)
 
+for _ in range(1):
+    print(12342414131)
+    display1()
 
 def equal():
     calc0 = mat()
@@ -135,12 +153,10 @@ def squrroot():
     calc132.append("²√")
     display()
 
-def twozero():
-    for _ in range(2):
-        zero()
+def dot():
+    calc132.append(".")
     display()
 
-""
 display()
 bton1 = tk.Button(giu_face, text=' 1  ', font="lucida 20 bold", command=one)
 bton1.grid(row=7, column=0, ipady=4, ipadx=20)
@@ -180,6 +196,6 @@ bton18 = tk.Button(giu_face, text='  /  ', font="lucida 20 bold", command=divide
 bton18.grid(row=5, column=3, ipady=4, ipadx=20)
 bton19 = tk.Button(giu_face, text='  + ', font="lucida 20 bold", command=plus)
 bton19.grid(row=8, column=3, ipady=4, ipadx=20)
-bton20 = tk.Button(giu_face, text=' 00 ', font="lucida 20 bold", command=twozero)
+bton20 = tk.Button(giu_face, text='  .  ', font="lucida 20 bold", command=dot)
 bton20.grid(row=8, column=0, ipady=4, ipadx=20)
 giu_face.mainloop()
