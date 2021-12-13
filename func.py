@@ -628,7 +628,6 @@ def d3(num=list):
 
 
 def d4(num):
-
     l = []
     num.reverse()
     for n in range(21, 28):
