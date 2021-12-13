@@ -101,7 +101,7 @@ def removesec(string, remover):
 
 def sub(calcc):
     try:
-        if "-" in calcc:
+        if "-" in calcc[0] or "-" in calcc:
             calc = "".join(calcc)
             d = calc.split("-", 1)
             if len(d) == 2:
@@ -183,7 +183,7 @@ def sub(calcc):
 
 def div(calcc):
     try:
-        if "÷" in calcc:
+        if "÷" in calcc[0] or "÷" in calcc:
             calc = "".join(calcc)
             m = calc.split("÷", 1)
             if len(m) == 2:
@@ -266,7 +266,7 @@ def div(calcc):
 
 def mult(calcc):
     try:
-        if "×" in calcc:
+        if "×" in calcc[0] or "×" in calcc:
             calc = "".join(calcc)
             m = calc.split("×", 1)
             onee = str(m[0])
@@ -344,7 +344,7 @@ def mult(calcc):
 
 def add(calcc):
     try:
-        if "+" in calcc:
+        if "+" in calcc[0] or "+" in calcc:
             calc = "".join(calcc)
             m = calc.split("+", 1)
             if len(m) == 2:
@@ -423,7 +423,7 @@ def add(calcc):
 
 def sqr(calcc):
     try:
-        if "^" in calcc:
+        if "^" in calcc[0] or "^" in calcc:
             calc = "".join(calcc)
             m = calc.split("^", 1)
             if len(m) == 2:
@@ -502,7 +502,7 @@ def sqr(calcc):
 
 def sqrroot(calcc):
     try:
-        if "²√" in calcc:
+        if "²√" in calcc[0] or "²√" in calcc:
             calc = "".join(calcc)
             m = calc.split("²√", 1)
             if len(m) == 2:
