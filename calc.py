@@ -11,9 +11,8 @@ calc132 = []
 def mat():
         c=check(calc132)
         if c2(calc132) == "1":
-            for _ in range(len(calc132)):
+            for _ in range(len(calc132[0])):
                 if c==False:
-                    print(calc132)
                     calc0 = sqrroot(calc132)
                     calc1 = sqr(calc0)
                     calc2 = div(calc1)
