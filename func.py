@@ -20,14 +20,10 @@ def floatingthree(num1):
     num = spliting(num1)
     try:
         for n in range(3):
-            print(fnum)
-            print(num)
             fnum.append(num[n])
         return fnum
     except:
         for n in range(2):
-            print(fnum)
-            print(num)
             fnum.append(num[n])
         return fnum
     finally:
@@ -162,18 +158,15 @@ def sub(calcc):
                     d.insert(1, ans1)
                     calcc.clear()
                     calcc.append("".join(d))
-                    print(calcc)
                     return calcc
                 elif anss[len(anss) - 1] != "0":
                     ansdot = ans.split(".")
                     ans1 = "".join(anss)
-                    print(ans1)
                     ans1 = floating(float(ans1))
                     ans1 = str(ans1)
                     d.insert(1, ans1)
                     calcc.clear()
                     calcc.append("".join(d))
-                    print(calcc)
                     return calcc
         else:
             return calcc
@@ -244,23 +237,19 @@ def div(calcc):
                     m.insert(1, ans1)
                     calcc.clear()
                     calcc.append("".join(m))
-                    print(calcc)
                     return calcc
                 elif anss[len(anss) - 1] != "0":
                     ansdot = ans.split(".")
                     ans1 = "".join(anss)
-                    print(ans1)
                     ans1 = floating(float(ans1))
                     ans1 = str(ans1)
                     m.insert(1, ans1)
                     calcc.clear()
                     calcc.append("".join(m))
-                    print(calcc)
                     return calcc
         else:
             return calcc
     except:
-        print(calcc)
         return calcc
 
 
@@ -654,7 +643,10 @@ def c2(l):
     calc3 = mult(calc2)
     calc4 = add(calc3)
     calc5 = sub(calc4)
-    if calc10[0]==calc5[0]:
-        return "0"
+    if "×" in calc10 or "+" in calc10 or "-" in calc10 or "÷" in calc10 or "^" in calc10 or "²√" in calc10:
+        if calc10==calc5:
+            return "0"
+        else:
+            return "1"
     else:
         return "1"

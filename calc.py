@@ -11,21 +11,24 @@ calc132 = []
 def mat():
         c=check(calc132)
         if c2(calc132) == "1":
-            for _ in range(len(calc132[0])):
-                if c==False:
-                    calc0 = sqrroot(calc132)
-                    calc1 = sqr(calc0)
-                    calc2 = div(calc1)
-                    calc3 = mult(calc2)
-                    calc4 = add(calc3)
-                    calc5 = sub(calc4)
-                elif c==True:
-                    calc0 = sqrroot(calc132)
-                    calc1 = sqr(calc0)
-                    calc2 = div(calc1)
-                    calc3 = mult(calc2)
-                    calc4 = add(calc3)
-                    calc5 = sub(calc4)
+            try:
+                for _ in range(len(calc132[0])):
+                    if c==False:
+                        calc0 = sqrroot(calc132)
+                        calc1 = sqr(calc0)
+                        calc2 = div(calc1)
+                        calc3 = mult(calc2)
+                        calc4 = add(calc3)
+                        calc5 = sub(calc4)
+                    elif c==True:
+                        calc0 = sqrroot(calc132)
+                        calc1 = sqr(calc0)
+                        calc2 = div(calc1)
+                        calc3 = mult(calc2)
+                        calc4 = add(calc3)
+                        calc5 = sub(calc4)
+            except:
+                return "0"
             return calc5
         elif c2(calc132) == "0":
             dis1 = tk.Label(giu_face, text=" Input   ", font="lucida 20 bold")
