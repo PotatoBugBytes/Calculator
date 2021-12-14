@@ -645,3 +645,16 @@ def d4(num):
     else:
         pass
     return "".join(l)
+
+def c2(l):
+    calc0 = sqrroot(l)
+    calc10 = calc0.copy()
+    calc1 = sqr(calc0)
+    calc2 = div(calc1)
+    calc3 = mult(calc2)
+    calc4 = add(calc3)
+    calc5 = sub(calc4)
+    if calc10[0]==calc5[0]:
+        return "0"
+    else:
+        return "1"

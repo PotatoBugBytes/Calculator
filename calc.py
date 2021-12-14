@@ -1,5 +1,5 @@
 import tkinter as tk
-from func import d2, d1, d3, d4, div, mult, add, sub, check, sqr, sqrroot
+from func import d2, d1, d3, d4, div, mult, add, sub, check, sqr, sqrroot ,c2
 
 giu_face = tk.Tk()
 giu_face.title("Calculator")
@@ -9,36 +9,37 @@ calc132 = []
 
 
 def mat():
-    calccopy = "".join(calc132)
-    print(calccopy)
-    if "++" in calccopy or "--" in calccopy or "××" in calccopy or "÷÷" in calccopy or "None" in calccopy:
-        dis1 = tk.Label(giu_face, text=" Input   ", font="lucida 20 bold")
-        dis1.grid(row=3, column=3)
-        dis2 = tk.Label(giu_face, text="   Invalid", font="lucida 20 bold")
-        dis2.grid(row=3, column=2)
-        dis2 = tk.Label(giu_face, text="              ", font="lucida 20 bold")
-        dis2.grid(row=3, column=1)
-        dis2 = tk.Label(giu_face, text="              ", font="lucida 20 bold")
-        dis2.grid(row=3, column=0)
-        return "0"
-    else:
         c=check(calc132)
-        for _ in range(len(calc132)):
-            if c==False:
-                calc0 = sqrroot(calc132)
-                calc1 = sqr(calc0)
-                calc2 = div(calc1)
-                calc3 = mult(calc2)
-                calc4 = add(calc3)
-                calc5 = sub(calc4)
-            elif c==True:
-                calc0 = sqrroot(calc132)
-                calc1 = sqr(calc0)
-                calc2 = div(calc1)
-                calc3 = mult(calc2)
-                calc4 = add(calc3)
-                calc5 = sub(calc4)
-        return calc5
+        if c2(calc132) == "1":
+            for _ in range(len(calc132)):
+                if c==False:
+                    print(calc132)
+                    calc0 = sqrroot(calc132)
+                    calc1 = sqr(calc0)
+                    calc2 = div(calc1)
+                    calc3 = mult(calc2)
+                    calc4 = add(calc3)
+                    calc5 = sub(calc4)
+                elif c==True:
+                    calc0 = sqrroot(calc132)
+                    calc1 = sqr(calc0)
+                    calc2 = div(calc1)
+                    calc3 = mult(calc2)
+                    calc4 = add(calc3)
+                    calc5 = sub(calc4)
+            return calc5
+        elif c2(calc132) == "0":
+            dis1 = tk.Label(giu_face, text=" Input   ", font="lucida 20 bold")
+            dis1.grid(row=3, column=3)
+            dis2 = tk.Label(giu_face, text="   Invalid", font="lucida 20 bold")
+            dis2.grid(row=3, column=2)
+            dis2 = tk.Label(giu_face, text="              ", font="lucida 20 bold")
+            dis2.grid(row=3, column=1)
+            dis2 = tk.Label(giu_face, text="              ", font="lucida 20 bold")
+            dis2.grid(row=3, column=0)
+            calc132.clear()
+            return "0"
+
 
 
 def display1():
