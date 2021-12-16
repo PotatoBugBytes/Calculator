@@ -562,14 +562,14 @@ def d1(num=list):
     l = []
     num = fix(num)
     num.reverse()
-    for n in range(0, 7):
+    for n in range(0, 30):
         try:
             l.append(num[n])
         except:
             pass
     num.reverse()
     l.reverse()
-    less = 7 - len(l)
+    less = 30 - len(l)
     if less > 0:
         for _ in range(less):
             l.insert(0, "  ")
@@ -578,62 +578,7 @@ def d1(num=list):
     return "".join(l)
 
 
-def d2(num=list):
-    l = []
-    num.reverse()
-    for n in range(7, 14):
-        try:
-            l.append(num[n])
-        except:
-            pass
-    num.reverse()
-    l.reverse()
-    less = 7 - len(l)
-    if less > 0:
-        for _ in range(less):
-            l.insert(0, "  ")
-    else:
-        pass
-    return "".join(l)
 
-
-def d3(num=list):
-    l = []
-    num.reverse()
-    for n in range(14, 21):
-        try:
-            l.append(num[n])
-        except:
-            pass
-    num.reverse()
-    l.reverse()
-    less = 7 - len(l)
-    if less > 0:
-        for _ in range(less):
-            l.insert(0, "  ")
-    else:
-        pass
-    return "".join(l)
-
-
-def d4(num):
-
-    l = []
-    num.reverse()
-    for n in range(21, 28):
-        try:
-            l.append(num[n])
-        except:
-            pass
-    num.reverse()
-    l.reverse()
-    less = 7 - len(l)
-    if less > 0:
-        for _ in range(less):
-            l.insert(0, "  ")
-    else:
-        pass
-    return "".join(l)
 
 def c2(l):
     calc0 = sqrroot(l)
