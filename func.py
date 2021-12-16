@@ -578,8 +578,6 @@ def d1(num=list):
     return "".join(l)
 
 
-
-
 def c2(l):
     calc0 = sqrroot(l)
     calc10 = calc0.copy()

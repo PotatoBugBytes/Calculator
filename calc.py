@@ -45,7 +45,6 @@ def display1():
 
 
 def display(c):
-    print(d1(c))
     dis1 = tk.Label(giu_face, text=d1(c), font="lucida 25 bold")
     dis1.grid(row=3, column=0,columnspan=4)
 
