@@ -558,7 +558,7 @@ def fix(l):
         return l
 
 
-def d1(num=list):
+def d(num=list):
     l = []
     num = fix(num)
     num.reverse()
@@ -586,8 +586,8 @@ def c2(l):
     calc3 = mult(calc2)
     calc4 = add(calc3)
     calc5 = sub(calc4)
-    if "×" in calc10 or "+" in calc10 or "-" in calc10 or "÷" in calc10 or "^" in calc10 or "²√" in calc10:
-        if calc10==calc5:
+    if "×" in calc10 or "+" in calc10 or "-" in calc10 or "÷" in calc10 or "^" in calc10 or "²√" in calc10 :
+        if calc10 == calc5:
             return "0"
         else:
             return "1"
