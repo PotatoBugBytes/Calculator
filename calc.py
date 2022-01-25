@@ -3,8 +3,7 @@ from func import d, div, mult, add, sub, check, sqr, sqrroot, c2
 
 giu_face = tk.Tk()
 giu_face.title("Calculator")
-giu_face.bg="black"
-
+giu_face['bg']='black'
 
 
 calc13 = []
