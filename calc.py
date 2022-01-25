@@ -3,9 +3,11 @@ from func import d, div, mult, add, sub, check, sqr, sqrroot, c2
 
 giu_face = tk.Tk()
 giu_face.title("Calculator")
+giu_face.bg="black"
+
+
 
 calc13 = []
-
 
 def mat():
     c = check(calc13)
@@ -31,14 +33,14 @@ def mat():
             return "0"
     # - -
     elif c2(calc13) == "0":
-        dis1 = tk.Label(giu_face, text="                                       Invalid Input", font="lucida 25 bold")
+        dis1 = tk.Label(giu_face, text="                                       Invalid Input", font="lucida 25 bold",fg='white',bg='black')
         dis1.grid(row=3, column=0, columnspan=4)
         calc13.clear()
         return "0"
 
 
 def display(c):
-    dis1 = tk.Label(giu_face, text=d(c), font="lucida 25 bold")
+    dis1 = tk.Label(giu_face, text=d(c), font="lucida 25 bold",fg='white',bg='black')
     dis1.grid(row=3, column=0, columnspan=4)
 
 
@@ -147,44 +149,44 @@ def dot():
 
 
 display(calc13)
-bton1 = tk.Button(giu_face, text='   1    ', font="lucida 20 bold", command=one)
-bton1.grid(row=7, column=0, ipady=4, ipadx=20)
-bton2 = tk.Button(giu_face, text='   4    ', font="lucida 20 bold", command=four)
+bton1 = tk.Button(giu_face, text='   1    ', font="lucida 20 bold", command=one,fg='white',bg='black')
+bton1.grid(row=7, column=0, ipady=4, ipadx=20,)
+bton2 = tk.Button(giu_face, text='   4    ', font="lucida 20 bold", command=four,fg='white',bg='black')
 bton2.grid(row=6, column=0, ipady=4, ipadx=20)
-bton3 = tk.Button(giu_face, text='   7    ', font="lucida 20 bold", command=seven)
+bton3 = tk.Button(giu_face, text='   7    ', font="lucida 20 bold", command=seven,fg='white',bg='black')
 bton3.grid(row=5, column=0, ipady=4, ipadx=20)
-bton4 = tk.Button(giu_face, text='   ⌫  ', font="lucida 20 bold", command=clear)
+bton4 = tk.Button(giu_face, text='   ⌫  ', font="lucida 20 bold", command=clear,fg='white',bg='black')
 bton4.grid(row=4, column=3, ipady=4, ipadx=20)
-bton5 = tk.Button(giu_face, text='   nˣ   ', font="lucida 20 bold", command=square)
+bton5 = tk.Button(giu_face, text='   nˣ   ', font="lucida 20 bold", command=square,fg='white',bg='black')
 bton5.grid(row=4, column=1, ipady=4, ipadx=20)
-bton6 = tk.Button(giu_face, text='    2   ', font="lucida 20 bold", command=two)
+bton6 = tk.Button(giu_face, text='    2   ', font="lucida 20 bold", command=two,fg='white',bg='black')
 bton6.grid(row=7, column=1, ipady=4, ipadx=20)
-bton8 = tk.Button(giu_face, text='   5    ', font="lucida 20 bold", command=five)
+bton8 = tk.Button(giu_face, text='   5    ', font="lucida 20 bold", command=five,fg='white',bg='black')
 bton8.grid(row=6, column=1, ipady=4, ipadx=20)
-bton9 = tk.Button(giu_face, text='   8    ', font="lucida 20 bold", command=eight)
+bton9 = tk.Button(giu_face, text='   8    ', font="lucida 20 bold", command=eight,fg='white',bg='black')
 bton9.grid(row=5, column=1, ipady=4, ipadx=22)
-bton0 = tk.Button(giu_face, text='    C    ', font="lucida 20 bold", command=clearall)
+bton0 = tk.Button(giu_face, text='    C    ', font="lucida 20 bold", command=clearall,fg='white',bg='black')
 bton0.grid(row=4, column=2, ipady=4, ipadx=20)
-bton10 = tk.Button(giu_face, text='   0    ', font="lucida 20 bold", command=zero)
+bton10 = tk.Button(giu_face, text='   0    ', font="lucida 20 bold", command=zero,fg='white',bg='black')
 bton10.grid(row=8, column=1, ipady=4, ipadx=20)
-bton11 = tk.Button(giu_face, text='    3     ', font="lucida 20 bold", command=three)
+bton11 = tk.Button(giu_face, text='    3     ', font="lucida 20 bold", command=three,fg='white',bg='black')
 bton11.grid(row=7, column=2, ipady=4, ipadx=20)
-bton12 = tk.Button(giu_face, text='     6    ', font="lucida 20 bold", command=six)
+bton12 = tk.Button(giu_face, text='     6    ', font="lucida 20 bold", command=six,fg='white',bg='black')
 bton12.grid(row=6, column=2, ipady=4, ipadx=20)
-bton13 = tk.Button(giu_face, text='    9     ', font="lucida 20 bold", command=nine)
+bton13 = tk.Button(giu_face, text='    9     ', font="lucida 20 bold", command=nine,fg='white',bg='black')
 bton13.grid(row=5, column=2, ipady=4, ipadx=20)
-bton14 = tk.Button(giu_face, text='   ²√   ', font="lucida 20 bold", command=squrroot)
+bton14 = tk.Button(giu_face, text='   ²√   ', font="lucida 20 bold", command=squrroot,fg='white',bg='black')
 bton14.grid(row=4, column=0, ipady=4, ipadx=20)
-bton15 = tk.Button(giu_face, text='    =     ', font="lucida 20 bold", command=equal)
+bton15 = tk.Button(giu_face, text='    =     ', font="lucida 20 bold", command=equal,fg='white',bg='black')
 bton15.grid(row=8, column=2, ipady=4, ipadx=20)
-bton16 = tk.Button(giu_face, text='     -    ', font="lucida 20 bold", command=minus)
+bton16 = tk.Button(giu_face, text='     -    ', font="lucida 20 bold", command=minus,fg='white',bg='black')
 bton16.grid(row=7, column=3, ipady=4, ipadx=20)
-bton17 = tk.Button(giu_face, text='    x    ', font="lucida 20 bold", command=multiply)
+bton17 = tk.Button(giu_face, text='    x    ', font="lucida 20 bold", command=multiply,fg='white',bg='black')
 bton17.grid(row=6, column=3, ipady=4, ipadx=20)
-bton18 = tk.Button(giu_face, text='    ÷    ', font="lucida 20 bold", command=divide)
+bton18 = tk.Button(giu_face, text='    ÷    ', font="lucida 20 bold", command=divide,fg='white',bg='black')
 bton18.grid(row=5, column=3, ipady=4, ipadx=20)
-bton19 = tk.Button(giu_face, text='    +    ', font="lucida 20 bold", command=plus)
-bton19.grid(row=8, column=3, ipady=4, ipadx=20)
-bton20 = tk.Button(giu_face, text='    .    ', font="lucida 20 bold", command=dot)
+bton19 = tk.Button(giu_face, text='    +    ', font="lucida 20 bold", command=plus,fg='white',bg='black')
+bton19.grid(row=8, column=3, ipady=4, ipadx=20,rowspan=True)
+bton20 = tk.Button(giu_face, text='    .    ', font="lucida 20 bold", command=dot,fg='white',bg='black')
 bton20.grid(row=8, column=0, ipady=4, ipadx=20)
 giu_face.mainloop()

@@ -562,14 +562,14 @@ def d(num=list):
     l = []
     num = fix(num)
     num.reverse()
-    for n in range(0, 30):
+    for n in range(0, 32):
         try:
             l.append(num[n])
         except:
             pass
     num.reverse()
     l.reverse()
-    less = 30 - len(l)
+    less = 32 - len(l)
     if less > 0:
         for _ in range(less):
             l.insert(0, "  ")
